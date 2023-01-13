@@ -12,8 +12,7 @@ export const Container = styled.div`
 
   > main {
     grid-area: content;
-    overflow-y: scroll;
-    padding: 64px 0;
+    overflow-y: auto;
   }
 `
 export const Links = styled.ul`
@@ -28,15 +27,20 @@ export const Links = styled.ul`
   }
 `
 export const Content = styled.div`
-  max-width: 550px;
+  max-width: 1100px;
   margin: 0 auto;
 
   display: flex;
   flex-direction: column;
-  > div {
+  .head {
     color: ${({ theme }) => theme.COLORS.PINK};
+    p {
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
   }
-
+  .tags {
+    margin-top: 20px;
+  }
   > button:first-child {
     align-self: flex-end;
   }

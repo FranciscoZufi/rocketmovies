@@ -41,20 +41,19 @@ export const NewNote = styled.div`
     font-family: 32px;
     font-weight: 400;
   }
+`
+export const Button = styled(Link)`
+  background-color: ${({ theme }) => theme.COLORS.PINK};
+  color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 207px;
+  height: 48px;
 
-  button {
-    background-color: ${({ theme }) => theme.COLORS.PINK};
-    color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-    border: none;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 207px;
-    height: 48px;
-
-    svg {
-      margin-right: 8px;
-    }
+  svg {
+    margin-right: 8px;
   }
 `

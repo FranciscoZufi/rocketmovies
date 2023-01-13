@@ -29,8 +29,8 @@ export function New(){
          
           <Section title="Markers">
             <div className='tags'>
-            <NoteItem value="React"/>
-            <NoteItem isNew placeholder="New markers"/>
+              <NoteItem value="React"/>
+              <NoteItem isNew placeholder="New markers"/>
             </div>
           </Section>
           <div className='buttons'>

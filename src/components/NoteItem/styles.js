@@ -8,7 +8,7 @@ export const Container = styled.div`
     isNew ? 'transparent' : theme.COLORS.BACKGROUND_900};
   color: ${({ theme }) => theme.COLORS.WHITE};
   border: ${({ theme, isNew }) =>
-    isNew ? `1px dashed ${theme.COLORS.BACKGROUND_900}` : 'none'};
+    isNew ? `1px dashed ${theme.COLORS.WHITE}` : 'none'};
   margin-bottom: 8px;
   border-radius: 10px;
   padding-right: 16px;

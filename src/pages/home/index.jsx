@@ -1,5 +1,6 @@
 import { FiPlus } from 'react-icons/fi'
 import { Container, Content, NewNote, Button} from './styles'
+import { Rate } from '../../components/Star'
 
 import { Header } from '../../components/header'
 
@@ -22,11 +23,13 @@ export function Home() {
 
       <Content>
         
+        <Note data={{ title:'A rede social',  description:'Filme mostra criação do Facebook', tags: [{id: '1', name:'facebook'}, {id: '2', name:'inovação'}]}}/>
+        <Note data={{ title:'A rede social', description:'Filme mostra criação do Facebook', tags: [{id: '1', name:'facebook'}, {id: '2', name:'inovação'}]}}/>
+        <Note data={{ title:'A rede social', description:'Filme mostra criação do Facebook', tags: [{id: '1', name:'facebook'}, {id: '2', name:'inovação'}]}}/>
         <Note data={{ title:'A rede social', description:'Filme mostra criação do Facebook', tags: [{id: '1', name:'facebook'}, {id: '2', name:'inovação'}]}}/>
         
       </Content>
 
-     
     </Container>
   )
 }

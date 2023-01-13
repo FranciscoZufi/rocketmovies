@@ -17,6 +17,7 @@ export const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     background-color: #0d0c0f;
+    border-radius: 8px;
     padding: 16px;
   }
 `

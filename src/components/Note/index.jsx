@@ -1,10 +1,15 @@
 import { Container } from './styles'
 import { Tag } from '../Tag'
+import { Rate } from '../../components/Star'
 
 export function Note({data, ...rest}) {
   return (
     <Container {...rest}>
-      <h1>{data.title}</h1>
+      <div className="title"> 
+        <h1>{data.title}</h1>
+        <Rate/>
+      </div>
+     
         <p>{data.description}</p>
       {
         data.tags && 

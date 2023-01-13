@@ -9,12 +9,20 @@ export const Container = styled.button`
 
   padding: 22px;
   margin-bottom: 16px;
-  > h1 {
-    flex: 1;
-    text-align: left;
-    font-weight: 700;
-    font-size: 24px;
-    color: ${({ theme }) => theme.COLORS.WHITE};
+  .title {
+    width: 100%;
+    display: grid;
+    margin-left: 0;
+    justify-content: left;
+    grid-template-rows: 30px 30px auto;
+
+    h1 {
+      flex: 1;
+      text-align: left;
+      font-weight: 700;
+      font-size: 24px;
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
   }
   > p {
     flex: 1;
