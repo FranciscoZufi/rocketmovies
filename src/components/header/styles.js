@@ -36,7 +36,7 @@ export const Container = styled.header`
     border: 0;
 
     &::placeholder {
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      color: #948f99;
     }
   }
 `

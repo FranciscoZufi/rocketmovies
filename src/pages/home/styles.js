@@ -47,6 +47,9 @@ export const NewNote = styled.div`
     color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     border: none;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 207px;
     height: 48px;
 

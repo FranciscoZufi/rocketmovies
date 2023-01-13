@@ -1,5 +1,5 @@
 import { FiPlus } from 'react-icons/fi'
-import { Container, Content, NewNote} from './styles'
+import { Container, Content, NewNote, Button} from './styles'
 
 import { Header } from '../../components/header'
 
@@ -13,10 +13,10 @@ export function Home() {
       </Header>
         <NewNote>
         <h2>My films</h2>
-        <a href="/New"> 
-        <button><FiPlus/>
-        Create note</button>
-        </a>
+         
+        <Button to="/New"><FiPlus/>
+        Create note</Button>
+      
        
       </NewNote>
 
