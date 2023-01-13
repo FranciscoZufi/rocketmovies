@@ -1,19 +1,21 @@
 
-import { Container, Profile, Logout } from "./styles";
+import { Container, Profile, Logout, Span } from "./styles";
+
 
 export function Header(){
   return (
     <Container>
-      <Profile to='/profile'>
-        <span>RocketMovies</span>
+      <Span>RocketMovies</Span>
+      <input type="text" placeholder="Search by title" />
         <div>
+      <Profile to='/profile'>
           <strong>Francisco Zufi</strong>
-          <Logout>
-             Sair
+      </Profile>
+          <Logout to='/'>
+             Leave
           </Logout>
         </div>
         <img src="https://github.com/franciscozufi.png" alt="Foto do usuário" />
-      </Profile>
     
     </Container>
   )

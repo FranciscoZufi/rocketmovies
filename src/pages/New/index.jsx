@@ -17,7 +17,7 @@ export function New(){
         <Form>
           <header>
             <h1> Create note</h1>
-            <Link to="/">Return</Link>
+            <Link to="/home">Return</Link>
           </header>
           <Input placeholder="Title"/>
           <Textarea placeholder="comments"/>

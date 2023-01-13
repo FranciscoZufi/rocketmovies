@@ -6,6 +6,7 @@ export const Container = styled.header`
 
   height: 105px;
   width: 100%;
+  gap: 64px;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   border-bottom-width: 1px;
@@ -13,25 +14,46 @@ export const Container = styled.header`
   border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
 
   padding: 0 80px;
-`
-export const Profile = styled(Link)`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 100%;
 
-  span {
-    font-size: 14px;
-    color: ${({ theme }) => theme.COLORS.WHITE};
-  }
   img {
     width: 56px;
     height: 56px;
     border-radius: 50%;
   }
+
+  input {
+    height: 50px;
+    width: 350%;
+    border-radius: 10px;
+    padding: 12px;
+
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    border: 0;
+
+    &::placeholder {
+      color: ${({ theme }) => theme.COLORS.WHITE};
+    }
+  }
+`
+
+export const Span = styled.span`
+  font-size: 24px;
+  color: ${({ theme }) => theme.COLORS.PINK};
+`
+
+export const Profile = styled(Link)`
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  width: 80px;
+  font-weight: 700;
+  color: ${({ theme }) => theme.COLORS.WHITE};
+
   > div {
     display: flex;
     flex-direction: column;
@@ -44,7 +66,10 @@ export const Profile = styled(Link)`
   }
 `
 
-export const Logout = styled.button`
+export const Logout = styled(Link)`
   border: none;
   background: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.COLORS.WHITE};
 `
