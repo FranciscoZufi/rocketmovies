@@ -5,6 +5,7 @@ import { NoteItem } from '../../components/NoteItem'
 import { Section } from '../../components/Section'
 import { Button } from '../../components/Button'
 import { Link } from 'react-router-dom'
+import { FiArrowLeft } from 'react-icons/fi'
 
 import { Container, Form } from './styles'
 
@@ -16,23 +17,27 @@ export function New(){
       <main>
         <Form>
           <header>
+            <Link to="/home"> <FiArrowLeft /> Return</Link>
             <h1> Create note</h1>
-            <Link to="/home">Return</Link>
           </header>
-          <Input placeholder="Title"/>
+          <div className='primaryInput'>  
+            <Input placeholder="Title"/>
+            <Input placeholder="Your rating (0 to 5)"/>
+          </div>
+        
           <Textarea placeholder="comments"/>
-          <Section title="Useful links">
-            <NoteItem value="https://rocketseat.com.br"/>
-            <NoteItem isNew placeholder="New link"/>
-          </Section>
-
-          <Section title="markers">
+         
+          <Section title="Markers">
             <div className='tags'>
             <NoteItem value="React"/>
-            <NoteItem isNew placeholder="New tag"/>
+            <NoteItem isNew placeholder="New markers"/>
             </div>
           </Section>
-          <Button title="Save" />
+          <div className='buttons'>
+            <Button id="del" title="Delete" />
+            <Button title="Save" />
+          </div>
+          
         </Form>
       </main>
     </Container>

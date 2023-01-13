@@ -13,8 +13,10 @@ export function Home() {
       </Header>
         <NewNote>
         <h2>My films</h2>
-        <button to="/New"> <FiPlus/>
+        <a href="/New"> 
+        <button><FiPlus/>
         Create note</button>
+        </a>
        
       </NewNote>
 

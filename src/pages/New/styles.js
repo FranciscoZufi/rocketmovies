@@ -15,24 +15,39 @@ export const Container = styled.div`
   }
   .tags {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+    background-color: #0d0c0f;
+    padding: 16px;
   }
 `
 export const Form = styled.form`
-  max-width: 550px;
+  max-width: 1137px;
   margin: 38px auto;
-
-  > header {
+  .primaryInput {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .buttons {
+    display: flex;
+    gap: 40px;
+
+    #del {
+      background-color: #0d0c0f;
+      color: ${({ theme }) => theme.COLORS.PINK};
+    }
+  }
+  header {
+    display: block;
 
     margin-bottom: 36px;
-
     a {
-      font-size: 20px;
-      color: ${({ theme }) => theme.COLORS.GRAY_100};
+      color: ${({ theme }) => theme.COLORS.PINK};
+    }
+
+    h1 {
+      font-size: 36px;
+      color: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
 `
