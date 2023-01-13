@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
   width: 100%;
@@ -32,6 +33,9 @@ export const Content = styled.div`
 
   display: flex;
   flex-direction: column;
+  > div {
+    color: ${({ theme }) => theme.COLORS.PINK};
+  }
 
   > button:first-child {
     align-self: flex-end;
@@ -46,5 +50,14 @@ export const Content = styled.div`
     font-size: 16px;
     margin-top: 16px;
     text-align: justify;
+  }
+`
+export const Logout = styled(Link)`
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: ${({ theme }) => theme.COLORS.PINK};
+  svg {
   }
 `
