@@ -8,8 +8,8 @@ export function SingIn() {
 return (
   <Container>
     <Form>
-      <h1>Rocket Notes</h1>
-      <p>Application to save and manage your useful links</p>
+      <h1>RocketMovies</h1>
+      <p>Application to track everything you watch.</p>
 
       <h2>LogIn</h2>
 

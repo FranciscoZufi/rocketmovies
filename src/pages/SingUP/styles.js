@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import backgroundImc from '../../assets/background.png'
+import backgroundImc from '../../assets/img.png'
 
 export const Container = styled.div`
   height: 100vh;
@@ -18,7 +18,7 @@ export const Form = styled.form`
   text-align: center;
   > h1 {
     font-size: 48px;
-    color: ${({ theme }) => theme.COLORS.ORANGE};
+    color: ${({ theme }) => theme.COLORS.PINK};
   }
 
   > h2 {
@@ -28,11 +28,11 @@ export const Form = styled.form`
 
   > p {
     font-size: 14px;
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
+    color: ${({ theme }) => theme.COLORS.WHITE};
   }
   > a {
     margin-top: 124px;
-    color: ${({ theme }) => theme.COLORS.ORANGE};
+    color: ${({ theme }) => theme.COLORS.PINK};
   }
 `
 

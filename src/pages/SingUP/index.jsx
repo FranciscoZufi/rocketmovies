@@ -9,8 +9,8 @@ return (
   <Container>
     <Background/>
     <Form>
-      <h1>Rocket Notes</h1>
-      <p>Application to save and manage your useful links</p>
+      <h1>RocketMovies</h1>
+      <p>Application to track everything you watch.</p>
 
       <h2>Create account</h2>
       <Input placeholder="Name" type="text" icon={FiUser}/>
