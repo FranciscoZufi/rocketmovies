@@ -10,7 +10,7 @@ export function Profile(){
     <Container>
       <header>
         <Link to='/'>
-          <FiArrowLeft/>
+          <FiArrowLeft /> Back 
           </Link>
       </header>
       <Form>
@@ -24,7 +24,7 @@ export function Profile(){
         <Input placeholder="E-mail" type="text" icon={FiMail}/>
         <Input placeholder="Current password" type="Password" icon={FiLock}/>
         <Input placeholder="New password" type="Password" icon={FiLock}/>
-        <Button title="Save"/>
+        <Button title="Save" />
       </Form>
     </Container>
   )

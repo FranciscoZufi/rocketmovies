@@ -6,15 +6,20 @@ export const Container = styled.div`
     width: 100%;
     height: 144px;
 
-    background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
     display: flex;
     align-items: center;
 
     padding: 0 124px;
-
+    a {
+      display: flex;
+      align-items: center;
+      color: ${({ theme }) => theme.COLORS.PINK};
+      font-size: 16px;
+    }
     svg {
-      color: ${({ theme }) => theme.COLORS.GRAY_100};
+      color: ${({ theme }) => theme.COLORS.PINK};
       font-size: 24px;
     }
   }
@@ -44,7 +49,7 @@ export const Avatar = styled.div`
     width: 48px;
     height: 48px;
 
-    background-color: ${({ theme }) => theme.COLORS.ORANGE};
+    background-color: ${({ theme }) => theme.COLORS.PINK};
     border-radius: 50%;
 
     display: flex;
