@@ -7,9 +7,10 @@ export const Container = styled.header`
   height: 105px;
   width: 100%;
 
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
   display: flex;
   justify-content: space-between;
@@ -19,25 +20,24 @@ export const Container = styled.header`
 export const Profile = styled(Link)`
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
 
-  > img {
+  span {
+    font-size: 14px;
+    color: ${({ theme }) => theme.COLORS.WHITE};
+  }
+  img {
     width: 56px;
     height: 56px;
     border-radius: 50%;
   }
-
   > div {
     display: flex;
     flex-direction: column;
     margin-left: 16px;
     line-height: 24px;
-
-    span {
-      font-size: 14px;
-      color: ${({ theme }) => theme.COLORS.GRAY_100};
-    }
-
-    strong {
+    justify-items: strong {
       font-size: 18px;
       color: ${({ theme }) => theme.COLORS.WHITE};
     }
@@ -47,9 +47,4 @@ export const Profile = styled(Link)`
 export const Logout = styled.button`
   border: none;
   background: none;
-
-  > svg {
-    color: ${({ theme }) => theme.COLORS.GRAY_100};
-    font-size: 36px;
-  }
 `
