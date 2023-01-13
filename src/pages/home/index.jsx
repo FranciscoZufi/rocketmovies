@@ -1,5 +1,5 @@
 import { FiPlus } from 'react-icons/fi'
-import { Container, Content, NewNote } from './styles'
+import { Container, Content, NewNote} from './styles'
 
 import { Header } from '../../components/header'
 
@@ -11,15 +11,16 @@ export function Home() {
     <Container>
       <Header>  
       </Header>
+        <NewNote>
         <h2>My films</h2>
-        <NewNote to='/new'>
-       <FiPlus />
-        Create note
+        <button to="/New"> <FiPlus/>
+        Create note</button>
+       
       </NewNote>
 
       <Content>
         
-        <Note data={{ title:'React', tags: [{id: '1', name:'react'}, {id: '2', name:'rocketseat'}]}}/>
+        <Note data={{ title:'A rede social', description:'Filme mostra criação do Facebook', tags: [{id: '1', name:'facebook'}, {id: '2', name:'inovação'}]}}/>
         
       </Content>
 

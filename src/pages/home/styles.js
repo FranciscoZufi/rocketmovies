@@ -9,9 +9,9 @@ export const Container = styled.div`
   grid-template-columns: auto;
   grid-template-rows: 105px 128px auto;
   grid-template-areas:
-    'header header'
-    'h2 newnote'
-    'content content';
+    'header'
+    'newnote'
+    'content';
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 `
@@ -25,22 +25,33 @@ export const Content = styled.div`
   overflow-y: auto;
 `
 
-export const NewNote = styled(Link)`
+export const NewNote = styled.div`
   grid-area: newnote;
 
-  background-color: ${({ theme }) => theme.COLORS.PINK};
-  color: ${({ theme }) => theme.COLORS.WHITE};
-  border: none;
-  border-radius: 8px;
   margin-top: 47px;
-  margin-right: 20px;
+  padding: 50px 100px 46px 100px;
+  width: 100vw;
 
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 207px;
-  height: 48px;
-  svg {
-    margin-right: 8px;
+  justify-content: space-between;
+
+  h2 {
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    font-family: 32px;
+    font-weight: 400;
+  }
+
+  button {
+    background-color: ${({ theme }) => theme.COLORS.PINK};
+    color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+    border: none;
+    border-radius: 8px;
+    width: 207px;
+    height: 48px;
+
+    svg {
+      margin-right: 8px;
+    }
   }
 `
