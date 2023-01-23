@@ -17,7 +17,7 @@ export function New(){
       <main>
         <Form>
           <header>
-            <Link to="/home"> <FiArrowLeft /> Return</Link>
+            <Link to="/"> <FiArrowLeft /> Return</Link>
             <h1> Create note</h1>
           </header>
           <div className='primaryInput'>  

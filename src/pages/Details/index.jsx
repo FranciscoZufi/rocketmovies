@@ -1,5 +1,5 @@
 import {Container, Logout, Content} from './styles'
-import { Header } from '../../components/Header'
+import { Header } from '../../components/header'
 import { FiArrowLeft } from 'react-icons/fi'
 import {AiOutlineClockCircle} from 'react-icons/all'
 import { Rate } from '../../components/Star'
@@ -18,7 +18,7 @@ export function Details() {
       <main>
         <Content>
       <Section>
-      <Logout to='/home'>
+      <Logout to='/'>
             <FiArrowLeft /> Come back
           </Logout>
       <div className="title">

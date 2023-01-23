@@ -9,8 +9,8 @@ function AuthProvider({ children }) {
     try{
       const response = await api.post('/sessions', {email, password})
       const { user, token} = response.data
-      localStorage.setItem('@rocketmovies:user', JSON.stringify(user))
-      localStorage.setItem('@rocketmovies:token', token)
+      localStorage.setItem('@rocketnotes:user', JSON.stringify(user))
+      localStorage.setItem('@rocketnotes:token', token)
       
       api.defaults.headers.common['authorization']=`Bearer ${token}`
       setData({user, token})
@@ -24,8 +24,8 @@ function AuthProvider({ children }) {
   }
 
   function signOut(){
-    const token = localStorage.removeItem('@rocketmovies:token')
-    const user = localStorage.removeItem('@rocketmovies:user')
+    const token = localStorage.removeItem('@rocketnotes:token')
+    const user = localStorage.removeItem('@rocketnotes:user')
 
     setData({})
   }
@@ -39,7 +39,7 @@ function AuthProvider({ children }) {
         user.avatar = response.data.avatar
       }
       await api.put('/users', user)
-      localStorage.setItem('@rocketmovies:user', JSON.stringify(user))
+      localStorage.setItem('@rocketnotes:user', JSON.stringify(user))
 
       setData({user, token:data.token})
       alert('Profile updated successfully')
@@ -53,8 +53,8 @@ function AuthProvider({ children }) {
   }
 
   useEffect(() => {
-    const token = localStorage.getItem('@rocketmovies:token')
-    const user = localStorage.getItem('@rocketmovies:user')
+    const token = localStorage.getItem('@rocketnotes:token')
+    const user = localStorage.getItem('@rocketnotes:user')
 
     if(token && user){
       api.defaults.headers.common['authorization']=`Bearer ${token}`
