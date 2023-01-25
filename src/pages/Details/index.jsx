@@ -3,45 +3,68 @@ import { Header } from '../../components/header'
 import { FiArrowLeft } from 'react-icons/fi'
 import {AiOutlineClockCircle} from 'react-icons/all'
 import { Rate } from '../../components/Star'
-
+import { useParams } from   'react-router-dom'
 import { Section } from '../../components/Section'
 import { Tag } from '../../components/TagDetail'
+import { useEffect, useState } from 'react'
+import { api } from '../../services/api'
+import { useAuth } from '../../hooks/auth'
 
 
 
 export function Details() {
+  const [data, setData] = useState(null)
+  const { user } = useAuth()
+
+  const params = useParams()
 
 
+
+  useEffect(() => {
+    async function fetchNote(){
+      const response = await api.get(`/notes/${params.id}`)
+      setData(response.data)
+    }
+    fetchNote()
+  }, [])
   return (
     <Container>
       <Header/>
-      <main>
+      {data &&
+        <main>
         <Content>
       <Section>
       <Logout to='/'>
             <FiArrowLeft /> Come back
           </Logout>
       <div className="title">
-        <h1>A rede social</h1> 
+        <h1>{data.note.title}</h1> 
         <Rate/>
       </div>
       
       <div className='head'>   
         <img src="https://github.com/franciscozufi.png" alt="Foto do usuário" />
-        <p>Per Francisco Zufi</p>
+        <p>{user.name}</p>
         <AiOutlineClockCircle />
         <p>23/05/22 às 08:00</p>
       </div>
-      <div className="tags">
-        <Tag title='express' />
-        <Tag title='nodejs' />
+      {
+        data.tags &&
+        <div className="tags">
+        {
+          data.tags.map(tag => (
+            <Tag title={tag.name} key={String(tag.id)}/>
+          ))
+        }
       </div>
+      }
       </Section>
         
-          <p>Em uma noite de outono em 2003, Mark Zuckerberg (Jesse Eisenberg), analista de sistemas graduado em Harvard, se senta em seu computador e começa a trabalhar em uma nova ideia. Apenas seis anos e 500 milhões de amigos mais tarde, Zuckerberg se torna o mais jovem bilionário da história com o sucesso da rede social Facebook. O sucesso, no entanto, o leva a complicações em sua vida social e profissional.</p>
+          <p>{data.note.description}</p>
       
        </Content>
       </main>
+      }
     </Container>
     
   )
