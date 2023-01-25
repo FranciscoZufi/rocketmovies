@@ -5,18 +5,29 @@ import { Container, Content, NewNote, Button} from './styles'
 import { Header } from '../../components/header'
 import { Note } from '../../components/Note'
 import { api } from '../../services/api'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 
 export function Home() {
-  const notes = api.get('/notes')
+  const [notes, setNotes] = useState([])
+  useEffect(() => {
+    async function handleNotes (){
+      const { data } = await api.get('/notes?title=')
+      console.log({data})
+      setNotes(data)
+    }
+    handleNotes(notes)
+  },[])
+
+  console.log({notes})
   function handleDetails(id){
     navigate(`/details/${id}`)
   }
 
   return (
     <Container>
-      <Header>  
-      </Header>
+      <Header />  
         <NewNote>
         <h2>My films</h2>
          
@@ -28,7 +39,8 @@ export function Home() {
 
       <Content>
         
-        { notes.map(note => (
+        {
+         notes.map(note => (
         <Note 
           key={String(note.id)}
           data={note} 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { startTransition, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { Container, Radio, Rating } from "./styles";
 
@@ -10,18 +10,16 @@ export function Rate() {
       {[...Array(5)].map((item, index) => {
         const givenRating = index + 1;
         return (
-          <label>
+          <label key={String(givenRating)}>
             <Radio
-              key={Radio}
               type="radio"
               value={givenRating}
               onClick={() => {
                 setRate(givenRating);
               }}
             />
-            <Rating key={Rating}>
+            <Rating>
               <FaStar
-                key={Rating.star}
                 color={
                   givenRating < rate || givenRating === rate
                     ? "#FF859B"
