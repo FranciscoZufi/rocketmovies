@@ -12,14 +12,16 @@ export function Rate() {
         return (
           <label>
             <Radio
+              key={Radio}
               type="radio"
               value={givenRating}
               onClick={() => {
                 setRate(givenRating);
               }}
             />
-            <Rating>
+            <Rating key={Rating}>
               <FaStar
+                key={Rating.star}
                 color={
                   givenRating < rate || givenRating === rate
                     ? "#FF859B"

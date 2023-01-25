@@ -23,12 +23,12 @@ export function Profile(){
 
 
   async function handleUpdate(){
-    const updated = {
+    const user = {
       name, email, password: passwordNew, old_password: passwordOld
     }
-    const userUpdated = Object.assign(user, updated)
     
-    await updateProfile({user: userUpdated, avatarFile})
+    
+    await updateProfile({user, avatarFile})
   }
   function handleChangeAvatar(event){
     const file = event.target.files[0]
@@ -41,7 +41,7 @@ export function Profile(){
   return (
     <Container>
       <header>
-        <Link to='/home'>
+        <Link to='/'>
           <FiArrowLeft /> Back 
           </Link>
       </header>
