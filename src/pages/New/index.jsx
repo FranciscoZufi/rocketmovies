@@ -83,7 +83,7 @@ export function New(){
             </div>
           </Section>
           <div className='buttons'>
-            <Button id="del" title="Delete" />
+            <Button id="del" title="Delete" reset/>
             <Button title="Save" onClick={handleNewNote}/>
           </div>
           

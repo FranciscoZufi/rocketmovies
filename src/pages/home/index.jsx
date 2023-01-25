@@ -1,13 +1,18 @@
 import { FiPlus } from 'react-icons/fi'
 import { Container, Content, NewNote, Button} from './styles'
-import { Rate } from '../../components/Star'
+
 
 import { Header } from '../../components/header'
-
 import { Note } from '../../components/Note'
+import { api } from '../../services/api'
 
 
 export function Home() {
+  const notes = api.get('/notes')
+  function handleDetails(id){
+    navigate(`/details/${id}`)
+  }
+
   return (
     <Container>
       <Header>  
@@ -23,10 +28,12 @@ export function Home() {
 
       <Content>
         
-        <Note data={{ title:'A rede social',  description:'Filme mostra criação do Facebook', tags: [{id: '1', name:'facebook'}, {id: '2', name:'inovação'}]}}/>
-        <Note data={{ title:'A rede social', description:'Filme mostra criação do Facebook', tags: [{id: '1', name:'facebook'}, {id: '2', name:'inovação'}]}}/>
-        <Note data={{ title:'A rede social', description:'Filme mostra criação do Facebook', tags: [{id: '1', name:'facebook'}, {id: '2', name:'inovação'}]}}/>
-        <Note data={{ title:'A rede social', description:'Filme mostra criação do Facebook', tags: [{id: '1', name:'facebook'}, {id: '2', name:'inovação'}]}}/>
+        { notes.map(note => (
+        <Note 
+          key={String(note.id)}
+          data={note} 
+          onClick={() => handleDetails(note.id)}/>))
+        }
         
       </Content>
 
