@@ -38,7 +38,7 @@ function AuthProvider({ children }) {
         const response = await api.patch('/users/avatar', fileUploadForm)
         user.avatar = response.data.avatar
       }
-      await api.put('/users', user)
+      await api.put(`/users/${user.id}`, user)
       localStorage.setItem('@rocketmovies:user', JSON.stringify(user))
 
       setData({user, token:data.token})

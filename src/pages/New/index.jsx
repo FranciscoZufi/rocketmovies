@@ -30,7 +30,12 @@ export function New(){
     setTags(prevState => prevState.filter(tag => tag !== deleted))
   }
   
-
+  function clearInput(){
+    setTitle('')
+    setRating('')
+    setDescription('')
+    setTags([])
+  }
   async function handleNewNote(){
     if(!title){
       return alert('Enter note title')
@@ -58,11 +63,11 @@ export function New(){
             <h1> Create note</h1>
           </header>
           <div className='primaryInput'>  
-            <Input placeholder="Title" onChange={e => setTitle(e.target.value)}/>
-            <Input placeholder="Your rating (0 to 5)" onChange={e => setRating(e.target.value)}/>
+            <Input placeholder="Title" value={title} onChange={e => setTitle(e.target.value)}/>
+            <Input value={rating} placeholder="Your rating (0 to 5)" onChange={e => setRating(e.target.value)}/>
           </div>
-        
-          <Textarea placeholder="comments" onChange={e => setDescription(e.target.value)}/>
+         
+          <Textarea value={description} placeholder="comments" onChange={e => setDescription(e.target.value)}/>
          
           <Section title="Markers">
             <div className='tags'>
@@ -74,16 +79,16 @@ export function New(){
                 />
               ))}
               <NoteItem 
-            isNew 
-            placeholder="New tag"
-            onChange={e => setNewTag(e.target.value)} 
-            value={newTag}
-            onClick={handleAddTag}
-           />
+                isNew 
+                placeholder="New tag"
+                onChange={e => setNewTag(e.target.value)} 
+                value={newTag}
+                onClick={handleAddTag}
+              />
             </div>
           </Section>
           <div className='buttons'>
-            <Button id="del" title="Delete" reset/>
+            <Button id="del" title="Delete" onClick={clearInput}/>
             <Button title="Save" onClick={handleNewNote}/>
           </div>
           

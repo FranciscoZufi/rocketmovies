@@ -23,8 +23,9 @@ export function Profile(){
 
 
   async function handleUpdate(){
+    const userLocal = JSON.parse(localStorage.getItem('@rocketmovies:user'))
     const user = {
-      name, email, password: passwordNew, old_password: passwordOld
+      id:userLocal.id, name, email, password: passwordNew, old_password: passwordOld
     }
     
     

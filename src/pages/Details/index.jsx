@@ -17,7 +17,7 @@ export function Details() {
   const { user } = useAuth()
 
   const params = useParams()
-
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
 
 
   useEffect(() => {
@@ -39,11 +39,11 @@ export function Details() {
           </Logout>
       <div className="title">
         <h1>{data.note.title}</h1> 
-        <Rate/>
+        <Rate star={data.note.rating}/>
       </div>
       
       <div className='head'>   
-        <img src="https://github.com/franciscozufi.png" alt="Foto do usuário" />
+        <img src={avatarUrl} alt="Foto do usuário" />
         <p>{user.name}</p>
         <AiOutlineClockCircle />
         <p>23/05/22 às 08:00</p>

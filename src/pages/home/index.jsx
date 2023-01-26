@@ -1,6 +1,6 @@
 import { FiPlus } from 'react-icons/fi'
 import { Container, Content, NewNote, Button} from './styles'
-
+import { useNavigate } from 'react-router-dom'
 
 import { Header } from '../../components/header'
 import { Note } from '../../components/Note'
@@ -10,6 +10,7 @@ import { useState } from 'react'
 
 
 export function Home() {
+  const navigate = useNavigate()
   const [notes, setNotes] = useState([])
   useEffect(() => {
     async function handleNotes (){
