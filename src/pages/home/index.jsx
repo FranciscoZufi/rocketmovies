@@ -14,7 +14,7 @@ export function Home() {
   const [notes, setNotes] = useState([])
 
 
-  // const valorInput = IndexContextProvider()
+
   useEffect(() => {
     async function handleNotes (){
       const { data } = await api.get('/notes?title=')
@@ -23,14 +23,7 @@ export function Home() {
     handleNotes(notes)
   },[])
 
-//   useEffect(() => {
-//   async function fetchNotes(){
-//     const response = await api.get(`/notes?title=%${valorInput}%`)
-//     setNotes(response.data)
-//   }
-//   fetchNotes(notes)
-// }, [search])
-  
+
   function handleDetails(id){
     navigate(`/details/${id}`)
   }

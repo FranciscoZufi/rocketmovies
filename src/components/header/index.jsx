@@ -26,15 +26,7 @@ function handleKeyPress(event) {
     console.log('enter press here! ')
   }
 }
-// const IndexContext = createContext();
-// function IndexContextProvider(props) {
-//   const [search, setSearch] = React.useState('');
-//   return (
-//     <IndexContext.Provider value={{search, setSearch}}>
-//       {props.children}
-//     </IndexContext.Provider>
-//   );
-// }
+
 useEffect(() => {
   async function fetchNotes(){
     const response = await api.get(`/notes?title=%${search}%`)
