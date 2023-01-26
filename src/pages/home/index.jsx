@@ -2,7 +2,7 @@ import { FiPlus } from 'react-icons/fi'
 import { Container, Content, NewNote, Button} from './styles'
 import { useNavigate } from 'react-router-dom'
 
-import { Header } from '../../components/header'
+import { Header} from '../../components/header'
 import { Note } from '../../components/Note'
 import { api } from '../../services/api'
 import { useEffect } from 'react'
@@ -12,16 +12,25 @@ import { useState } from 'react'
 export function Home() {
   const navigate = useNavigate()
   const [notes, setNotes] = useState([])
+
+
+  // const valorInput = IndexContextProvider()
   useEffect(() => {
     async function handleNotes (){
       const { data } = await api.get('/notes?title=')
-      console.log({data})
       setNotes(data)
     }
     handleNotes(notes)
   },[])
 
-  console.log({notes})
+//   useEffect(() => {
+//   async function fetchNotes(){
+//     const response = await api.get(`/notes?title=%${valorInput}%`)
+//     setNotes(response.data)
+//   }
+//   fetchNotes(notes)
+// }, [search])
+  
   function handleDetails(id){
     navigate(`/details/${id}`)
   }
@@ -37,7 +46,7 @@ export function Home() {
       
        
       </NewNote>
-
+ 
       <Content>
         
         {
@@ -49,7 +58,7 @@ export function Home() {
         }
         
       </Content>
-
+    
     </Container>
   )
 }

@@ -27,7 +27,7 @@ function AuthProvider({ children }) {
     const token = localStorage.removeItem('@rocketmovies:token')
     const user = localStorage.removeItem('@rocketmovies:user')
 
-    setData({})
+    setData({token, user})
   }
 
   async function updateProfile({ user, avatarFile }){

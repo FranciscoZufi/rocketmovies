@@ -3,13 +3,13 @@ import {  FiSearch } from 'react-icons/fi'
 import { api } from '../../services/api'
 import avatarPlaceholder from '../../assets/avatar_placeholder.svg'
 import { useNavigate} from 'react-router-dom';
-import {  useState, useEffect } from 'react'
+import {  useState, useEffect, createContext } from 'react'
 import { Container, Profile, Logout, Span } from "./styles";
 import { Input } from '../Input';
 
 
 
-export function Header(){
+function Header(){
   const { signOut, user } = useAuth() 
   const navigate = useNavigate()
   function handleSignOut(){
@@ -21,10 +21,23 @@ const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` :
 const [search, setSearch] = useState('')
 const [notes, setNotes] = useState('')
 
-
+function handleKeyPress(event) {
+  if(event.key === 'Enter'){
+    console.log('enter press here! ')
+  }
+}
+// const IndexContext = createContext();
+// function IndexContextProvider(props) {
+//   const [search, setSearch] = React.useState('');
+//   return (
+//     <IndexContext.Provider value={{search, setSearch}}>
+//       {props.children}
+//     </IndexContext.Provider>
+//   );
+// }
 useEffect(() => {
   async function fetchNotes(){
-    const response = await api.get(`/notes?title=${search}`)
+    const response = await api.get(`/notes?title=%${search}%`)
     setNotes(response.data)
   }
   fetchNotes(notes)
@@ -36,7 +49,9 @@ useEffect(() => {
         type="text" 
         placeholder="Search by title" 
         icon={FiSearch}
+        value={search}
         onChange={(e) => setSearch(e.target.value)}
+        onKeyPress={handleKeyPress}
         /> 
         <div>
       <Profile to='/profile'>
@@ -50,4 +65,8 @@ useEffect(() => {
     
     </Container>
   )
+}
+export{
+  Header
+  // IndexContextProvider
 }

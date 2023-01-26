@@ -31,10 +31,7 @@ export function New(){
   }
   
   function clearInput(){
-    setTitle('')
-    setRating('')
-    setDescription('')
-    setTags([])
+  navigate('/')
   }
   async function handleNewNote(){
     if(!title){
@@ -88,7 +85,11 @@ export function New(){
             </div>
           </Section>
           <div className='buttons'>
-            <Button id="del" title="Delete" onClick={clearInput}/>
+            <Button 
+            id="del" 
+            title="Delete" 
+            onClick={clearInput}
+            />
             <Button title="Save" onClick={handleNewNote}/>
           </div>
           
